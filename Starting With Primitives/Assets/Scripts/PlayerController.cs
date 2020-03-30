@@ -7,13 +7,17 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed = 10;
 
     private Rigidbody playerRigidBody;
-    public float jumpForce = 6;
+    public float jumpForce = 15;
+    public float gravityModifier = 1;
     public bool isOnGround;
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody>();
+
+        Physics.gravity *= gravityModifier;
     }
 
     // Update is called once per frame
@@ -25,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && isOnGround) {
             playerRigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
             isOnGround = false;
         }
     }
