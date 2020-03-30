@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/Unity Create With Code Lab 2.unity
+  isLoaded: 1
+  isActive: 1
